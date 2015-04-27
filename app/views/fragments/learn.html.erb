@@ -1,0 +1,10 @@
+<h1><%= link_to @fragment.title, learn_fragment_path(@fragment) %></h1>
+
+<% if @total_lines > @current_line %>
+  <%= link_to "Next line", learn_fragment_path(@fragment, lines: @current_line + 1) %>
+<% end %>
+
+<p>
+  <%=raw @lines %>
+</p>
+

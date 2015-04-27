@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fragments</h1>
+
+<% @fragments.each do |fragment| %>
+  <h2>
+    <%= fragment.title %>
+  </h2>
+
+  <p>
+  <%=raw fragment.body_for_html %>
+  <br/>
+  <%= link_to 'Learn', learn_fragment_path(fragment) %>
+  <%= link_to 'Show', fragment %>
+  <%= link_to 'Edit', edit_fragment_path(fragment) %>
+  <%= link_to 'Destroy', fragment, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
+<%= link_to 'New Fragment', new_fragment_path %>
